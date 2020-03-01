@@ -25,11 +25,12 @@ while True:
 
     if incoming is not None: # message was received
         mb.display.show(mb.Image.HEART, delay=100, clear=True, wait=False)
-        
+
         #############################################################
         # FILL IN HERE
         # Incoming is string sent from logger
         # Need to parse it and reformat as a tuple for the MU plotter
         #############################################################
-
+        a_values = radio.receive()
+        print(a_values)
         mb.sleep(10)

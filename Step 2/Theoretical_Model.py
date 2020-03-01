@@ -18,6 +18,7 @@ print(period(length_array_meters))
 
 #length_vs_period = 
 
-plt.plot(length_array_meters)
-plt.ylabel(period(length_array_meters))
+plt.plot(period(length_array_meters), length_array_meters )
+plt.ylabel('length (m)')
+plt.xlabel('period (s)')
 plt.show()

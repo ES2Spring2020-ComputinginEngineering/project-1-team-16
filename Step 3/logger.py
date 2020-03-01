@@ -1,4 +1,4 @@
-##################
+ ##################
 # FILL IN HEADER
 #################
 
@@ -18,7 +18,7 @@ while not mb.button_a.is_pressed():  # wait for button A to be pressed to begin 
 radio.send('start') # Send the word 'start' to start the receiver
 mb.sleep(1000)
 mb.display.show(mb.Image.HEART)  # Display Heart while logging
-
+string = ""
 
 # Read and send accelerometer data repeatedly until button A is pressed again
 while not mb.button_a.is_pressed():
@@ -28,8 +28,12 @@ while not mb.button_a.is_pressed():
     # Need to format into a single string
     # Send the string over the radio
     ######################################################
+    x = mb.accelerometer.get_x()
+    y = mb.accelerometer.get_y()
+    z = mb.accelerometer.get_z()
+    string = string + x + y + z
+    radio.send(string)
 
-    radio.send(message)
     mb.sleep(10)
 
 
