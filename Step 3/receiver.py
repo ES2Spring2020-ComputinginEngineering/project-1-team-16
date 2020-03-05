@@ -4,10 +4,10 @@
 
 import microbit as mb
 import radio  # Needs to be imported separately
-
+fout = open('data_file', 'w')
 # Change the channel if other microbits are interfering. (Default=7)
 radio.on()  # Turn on radio
-radio.config(channel=7, length =100)
+radio.config(channel=16, length =100)
 
 print('Program Started')
 mb.display.show(mb.Image.HAPPY, delay=1000, clear=True)
@@ -31,6 +31,11 @@ while True:
         # Incoming is string sent from logger
         # Need to parse it and reformat as a tuple for the MU plotter
         #############################################################
-        a_values = radio.receive()
-        print(a_values)
         mb.sleep(10)
+        l = incoming.split(',')
+        data = (int(l[0]),int(l[1]),int(l[2]),int(l[3]))
+        print(data)
+
+fout.write(data)
+
+fout.close()

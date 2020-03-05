@@ -1,8 +1,8 @@
 # Project1
 Project 1 Starter Code
 
-Names:
-Team Name:
+Names:Athena and Odin
+Team Name: Team 16
 
 Your primary tasks will be to:
 
