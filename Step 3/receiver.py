@@ -1,10 +1,10 @@
-##################
+ ##################
 # FILL IN HEADER
 #################
 
 import microbit as mb
 import radio  # Needs to be imported separately
-fout = open('data_file', 'w')
+
 # Change the channel if other microbits are interfering. (Default=7)
 radio.on()  # Turn on radio
 radio.config(channel=16, length =100)
@@ -36,6 +36,3 @@ while True:
         data = (int(l[0]),int(l[1]),int(l[2]),int(l[3]))
         print(data)
 
-fout.write(data)
-
-fout.close()
