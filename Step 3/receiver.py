@@ -1,9 +1,11 @@
-##################
+ ##################
 # FILL IN HEADER
 #################
 
 import microbit as mb
 import radio  # Needs to be imported separately
+=======
+
 # Change the channel if other microbits are interfering. (Default=7)
 radio.on()  # Turn on radio
 radio.config(channel=16, length =100)
