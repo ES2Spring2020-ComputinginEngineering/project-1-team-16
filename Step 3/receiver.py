@@ -1,5 +1,9 @@
-                                                                                ##################
-# FILL IN HEADER
+##################
+# Receiver.py
+
+# Athena Ohnemus and Odin Doolittle
+# TAs Assisted us with this script.
+# This script receives acceleration data as a script with radio signals.
 #################
 
 import microbit as mb
@@ -22,15 +26,8 @@ print('start')
 
 while True:
     incoming = radio.receive() # Read from radio
-
     if incoming is not None: # message was received
         mb.display.show(mb.Image.HEART, delay=100, clear=True, wait=False)
-
-        #############################################################
-        # FILL IN HERE
-        # Incoming is string sent from logger
-        # Need to parse it and reformat as a tuple for the MU plotter
-        #############################################################
         mb.sleep(10)
         l = incoming.split(',')
         data = (int(l[0]),int(l[1]),int(l[2]),int(l[3]))

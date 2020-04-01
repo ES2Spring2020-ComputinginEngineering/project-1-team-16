@@ -1,5 +1,9 @@
  ##################
-# FILL IN HEADER
+# logger.py
+
+# Odin Doolittle and Athena Ohnemus.
+# We had help from TAs for this script.
+# This script sends acceleration info by radio to another microbit.
 #################
 
 import microbit as mb
@@ -10,6 +14,7 @@ radio.on()  # Turn on radio
 radio.config(channel=16, length=100)
 
 print('Program Started')
+
 mb.display.show(mb.Image.HAPPY)
 
 while not mb.button_a.is_pressed():  # wait for button A to be pressed to begin logging
@@ -20,14 +25,8 @@ mb.sleep(1000)
 mb.display.show(mb.Image.HEART)  # Display Heart while logging
 string = ""
 
-# Read and send accelerometer data repeatedly until button A is pressed again
+
 while not mb.button_a.is_pressed():
-    ######################################################
-    # FILL In HERE
-    # Need to collect accelerometer and time measurements
-    # Need to format into a single string
-    # Send the string over the radio
-    ######################################################
     x = mb.accelerometer.get_x()
     y = mb.accelerometer.get_y()
     z = mb.accelerometer.get_z()
